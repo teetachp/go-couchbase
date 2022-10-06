@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: demoapp
+spec:
+  containers:
+  - name: "demo1"
+    image: "gcr.io/tdg-tid-subscribe-prod/demo1:prod"
+    imagePullPolicy: Always
+    env:
+    - name: COUCHBASE_HOST
+      value: "couchbase://prod-cluster.couchbase.svc"
+    - name: COUCHBASE_BUCKET
+      value: "subscribe-prod"
+    - name: COUCHBASE_COLLECTION
+      value: "subscribe_profile"
+    - name: COUCHBASE_USERNAME
+      value: "couchbase-prod"
+    - name: COUCHBASE_PASSWORD
+      value: "GC2UGaMD3zj5MwBe"
